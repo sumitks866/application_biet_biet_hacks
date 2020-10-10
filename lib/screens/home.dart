@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:application_biet_biet_hacks/screens/draweritem_def.dart';
+import 'package:application_biet_biet_hacks/models/draweritem_def.dart';
 import 'package:application_biet_biet_hacks/screens/renderDrawer.dart';
-import 'package:application_biet_biet_hacks/screens/tiles_def.dart';
+import 'package:application_biet_biet_hacks/models/tiles_def.dart';
 import 'package:application_biet_biet_hacks/screens/tiles.dart';
 
 class Home extends StatefulWidget {
@@ -91,7 +91,6 @@ class _RenderTilesState extends State<RenderTiles> {
     TileItem(tileName: "DEPARTMENTS" , imageName: "assets/icon_department.png" ,screenName: '/departments'),
     TileItem(tileName: "PHOTO GALLERY" , imageName: "assets/icon_gallery.png",screenName:'/gallery' ),
   ] ;
-
 
   @override
   Widget build(BuildContext context) {

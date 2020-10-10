@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+import 'package:application_biet_biet_hacks/serivce/authentication.dart';
+
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+
+  String email = '';
+  String password = '';
+  String error = '';
+  AuthenticationService _auth = AuthenticationService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +74,11 @@ class Login extends StatelessWidget {
                             )]
                           ),
                           child: TextFormField(
-
+                            onChanged: (val){
+                              setState(() {
+                                email = val+'@application-biet.ac.in';
+                              });
+                            },
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                             hintText: "Enter Roll Number",
@@ -84,7 +101,11 @@ class Login extends StatelessWidget {
                             )]
                           ),
                           child: TextFormField(
-
+                            onChanged: (val){
+                              setState(() {
+                                password = val;
+                              });
+                            },
                             obscureText: true,
                             decoration: InputDecoration(
                               prefixIcon: Icon(Icons.lock),
@@ -100,8 +121,18 @@ class Login extends StatelessWidget {
                         Text("Forgot Password?", style: TextStyle(color: Colors.blue[700]),),
                         SizedBox(height: 40,),
                         GestureDetector(
-                          onTap: (){
-                            print("button Clicked");
+                          onTap: () async{
+                            FocusScope.of(context).unfocus();
+                            dynamic loginResult = await _auth.login(email, password);
+                            print("============"+loginResult.toString());
+                            if(loginResult==null){
+                              print('Failed to Login!');
+                              setState(() {
+                                error = 'Failed to Login!';
+                              });
+                            }else{
+                              print("successfully logged in "+loginResult.uid);
+                            }
                           },
                           child: Container(
                             height: 50,
@@ -116,6 +147,10 @@ class Login extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 10.0,),
+                        Text(
+                          error,
+                          style: TextStyle(color: Colors.red, fontSize: 15),
+                        )
                       ],
                       ),
                   ),
