@@ -124,7 +124,6 @@ class _LoginState extends State<Login> {
                           onTap: () async{
                             FocusScope.of(context).unfocus();
                             dynamic loginResult = await _auth.login(email, password);
-                            print("============"+loginResult.toString());
                             if(loginResult==null){
                               print('Failed to Login!');
                               setState(() {

@@ -9,6 +9,10 @@ class AuthenticationService {
     return user==null?null:CustomUser(uid: user.uid);
   }
 
+  Stream<CustomUser> get users {
+     return  _auth.authStateChanges().map(_castToCustom);
+  }
+
   Future login(String email,String password) async {
     try{
         User user = (await _auth.signInWithEmailAndPassword(email: email, password: password)).user;
