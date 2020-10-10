@@ -13,9 +13,6 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
   @override
   Widget build(BuildContext context) {
-    //final user = Provider.of<CustomUser>(context);
-    //if(user == null)
-     // return Login();
     return Home();
   }
 }

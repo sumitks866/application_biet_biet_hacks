@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:application_biet_biet_hacks/models/draweritem_def.dart';
 import 'package:application_biet_biet_hacks/screens/renderDrawer.dart';
 import 'package:application_biet_biet_hacks/models/tiles_def.dart';
-import 'package:application_biet_biet_hacks/screens/tiles.dart';
+import 'package:application_biet_biet_hacks/screens/renderTiles.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,12 +13,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   List<DrawerItem> draweritems = [
-    DrawerItem(text: "You",icon: Icon(Icons.person)),
-    DrawerItem(text: "Academics",icon: Icon(Icons.book)),
-    DrawerItem(text: "Training & Placement",icon: Icon(Icons.dashboard)),
-    DrawerItem(text: "Alumni",icon: Icon(Icons.account_balance)),
-    DrawerItem(text: "Grievance Redressal",icon: Icon(Icons.inbox)),
-    DrawerItem(text: "Contact Us",icon: Icon(Icons.mail)),
+    DrawerItem(text: "You",icon: Icon(Icons.person),screenName: '/you'),
+    DrawerItem(text: "Academics",icon: Icon(Icons.book),screenName: '/academics'),
+    DrawerItem(text: "Training & Placement",icon: Icon(Icons.dashboard),screenName: '/tandp'),
+    DrawerItem(text: "Alumni",icon: Icon(Icons.account_balance),screenName: '/alumni'),
+    DrawerItem(text: "Grievance Redressal",icon: Icon(Icons.inbox),screenName: '/grievance'),
+    DrawerItem(text: "Contact Us",icon: Icon(Icons.mail), screenName: '/contact'),
     DrawerItem(text: "Sign Out",icon: Icon(Icons.exit_to_app))
   ];
 
@@ -69,9 +69,15 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-        body: Padding(
-          padding: EdgeInsets.all(20.0),
-          child : RenderTiles(),
+        body: Container(
+          decoration: BoxDecoration(
+            color : Colors.blue[800],
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            
+            child : RenderTiles(),
+          ),
         ) ,
       ),
     );
