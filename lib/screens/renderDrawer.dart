@@ -10,7 +10,8 @@ class RenderDrawer extends StatelessWidget {
       title : Text(draweritem.text) ,
       leading: draweritem.icon,
       onTap: () {
-        Navigator.pop(context);
+        // Special case for sign out 
+        Navigator.pushNamed(context,draweritem.screenName);
       },
     );
   }
