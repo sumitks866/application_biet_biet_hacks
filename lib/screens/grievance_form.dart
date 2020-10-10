@@ -1,3 +1,4 @@
+import 'package:application_biet_biet_hacks/serivce/upload_grievances.dart';
 import 'package:flutter/material.dart';
 
 class Grievances extends StatefulWidget {
@@ -11,7 +12,7 @@ class _GrievancesState extends State<Grievances> {
   var _controller2 = TextEditingController();
 
   String subject = '';
-  String textValue = '';
+  String body = '';
   String error = '';
   bool isActive = false;
 
@@ -106,7 +107,7 @@ class _GrievancesState extends State<Grievances> {
                 maxLines: null,
                 onChanged: (val){
                   setState(() {
-                    textValue = val;
+                    body = val;
                   });
                 },
                 decoration: InputDecoration(
@@ -128,10 +129,18 @@ class _GrievancesState extends State<Grievances> {
                     setState(() {
                       isActive = true;
                     });
-                    _controller1.clear();
-                       _controller2.clear();
-                    FocusScope.of(context).unfocus();
-                    
+                    if(subject != '' && body != ''){
+                      dynamic upload = UploadGrievances().upload(subject, body);
+                        if(upload != null) {
+                          _controller1.clear();
+                          _controller2.clear();
+                          FocusScope.of(context).unfocus();
+                        }else {
+                          error = 'An error occured please try again';
+                        }
+                    }else {
+                      error = 'Please fill Subject and Body';
+                    }
                   },
                   onTapUp: (_) {
                     setState(() {
