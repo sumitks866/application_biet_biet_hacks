@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Notice extends StatefulWidget {
+class Grievances extends StatefulWidget {
   @override
-  _NoticeState createState() => _NoticeState();
+  _GrievancesState createState() => _GrievancesState();
 }
 
-class _NoticeState extends State<Notice> {
+class _GrievancesState extends State<Grievances> {
 
   var _controller1 = TextEditingController();
   var _controller2 = TextEditingController();
@@ -19,7 +19,7 @@ class _NoticeState extends State<Notice> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Publush Notification'),
+        title: Text('Post Grievance Redressal'),
         backgroundColor: Color.fromRGBO(2, 52, 130, 1),
       ),
       body: Container(
@@ -28,7 +28,7 @@ class _NoticeState extends State<Notice> {
         child: ListView(
           children: <Widget>[
             Text(
-              'Notice',
+              'Grievance Redressal',
               style: TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class _NoticeState extends State<Notice> {
                   });
                 },
                 decoration: InputDecoration(
-                    hintText: "Notice Subject",
+                    hintText: "Grievance Subject",
                     hintStyle: TextStyle(color: Colors.blue[100]),
                     contentPadding: EdgeInsets.fromLTRB(10,0,10,5),
                     border: InputBorder.none
@@ -79,7 +79,7 @@ class _NoticeState extends State<Notice> {
             Align(
               alignment: Alignment.topLeft,
               child: Text(
-                'Notice Body',
+                'Grievance Body',
                 style: TextStyle(
                   color: Colors.green[800],
                   fontSize: 15,
@@ -110,7 +110,7 @@ class _NoticeState extends State<Notice> {
                   });
                 },
                 decoration: InputDecoration(
-                    hintText: "Notice body",
+                    hintText: "Grievance Body",
                     hintStyle: TextStyle(color: Colors.blue[100]),
                     contentPadding: EdgeInsets.fromLTRB(10,10,10,5),
                     border: InputBorder.none

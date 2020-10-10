@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
     DrawerItem(text: "Academics",icon: Icon(Icons.book),screenName: '/academics'),
     DrawerItem(text: "Training & Placement",icon: Icon(Icons.dashboard),screenName: '/tandp'),
     DrawerItem(text: "Alumni",icon: Icon(Icons.account_balance),screenName: '/alumni'),
-    DrawerItem(text: "Grievance Redressal",icon: Icon(Icons.inbox),screenName: '/grievance'),
+    DrawerItem(text: "Grievance Redressal",icon: Icon(Icons.inbox),screenName: '/grievances'),
     DrawerItem(text: "Contact Us",icon: Icon(Icons.mail), screenName: '/contact'),
     DrawerItem(text: "Sign Out",icon: Icon(Icons.exit_to_app))
   ];
