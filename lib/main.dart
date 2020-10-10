@@ -11,8 +11,11 @@ import 'package:application_biet_biet_hacks/screens/tandp.dart';
 import 'package:application_biet_biet_hacks/screens/you.dart';
 import 'package:flutter/material.dart';
 import 'package:application_biet_biet_hacks/wrapper..dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

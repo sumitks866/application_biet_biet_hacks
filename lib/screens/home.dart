@@ -98,7 +98,6 @@ class _RenderTilesState extends State<RenderTiles> {
     TileItem(tileName: "PHOTO GALLERY" , imageName: "assets/icon_gallery.png",screenName:'/gallery' ),
   ] ;
 
-
   @override
   Widget build(BuildContext context) {
     return ListView(
