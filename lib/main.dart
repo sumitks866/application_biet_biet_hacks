@@ -46,7 +46,6 @@ class _MyAppState extends State<MyApp> {
             '/academics': (context)=>Academics(), 
             '/tandp':(context)=>TandP(),
             '/alumni':(context)=>Alumni(),
-            '/grievance':(context)=>Grievance(),
             '/contact':(context)=>Contact(),
           },
       ),

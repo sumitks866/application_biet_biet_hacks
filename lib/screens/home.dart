@@ -1,3 +1,7 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 import 'package:application_biet_biet_hacks/models/draweritem_def.dart';
@@ -11,6 +15,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+    
+  
 
   List<DrawerItem> draweritems = [
     DrawerItem(text: "You",icon: Icon(Icons.person),screenName: '/you'),
@@ -22,10 +28,75 @@ class _HomeState extends State<Home> {
     DrawerItem(text: "Sign Out",icon: Icon(Icons.exit_to_app))
   ];
 
+  
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final FirebaseMessaging _fcm = FirebaseMessaging() ; 
+  StreamSubscription iosSubscription;
+  @override
+  void initState() {
+      super.initState();
+      _fcm.getToken().then((token) {
+        print(token) ; 
+      }) ; 
+      if (Platform.isIOS) {
+          iosSubscription = _fcm.onIosSettingsRegistered.listen((data) {
+              // save the token  OR subscribe to a topic here
+          });
+
+          _fcm.requestNotificationPermissions(IosNotificationSettings());
+      }
+      _fcm.configure(
+        onMessage: (Map<String, dynamic> message) async {
+          print("onMessage: $message");
+          final snackBar = SnackBar(
+            content: Text('A new Notice arrived!'), 
+            action: SnackBarAction(
+              label: "Go to Notices",
+              onPressed: () {
+                Navigator.pushNamed(context,'/notices') ; 
+                // TO - DO
+                // Routing to Notices Screen 
+              },
+              ),
+          );
+          _scaffoldKey.currentState.showSnackBar(snackBar);
+
+          // showDialog(
+          //   context: context,
+          //   builder: (context) => AlertDialog(
+          //     backgroundColor: Colors.red[700],
+          //           content: ListTile(
+          //           title: Text(message['notification']['title']),
+          //           subtitle: Text(message['notification']['body']),
+          //           ),
+          //           actions: <Widget>[
+          //           FlatButton(
+          //               child: Text('Ok'),
+          //               onPressed: () => Navigator.of(context).pop(),
+          //           ),
+          //       ],
+          //   ),
+          // );
+              
+          
+        },
+      onLaunch: (Map<String, dynamic> message) async {
+          print("onLaunch: $message");
+          // TODO optional
+      },
+      onResume: (Map<String, dynamic> message) async {
+          print("onResume: $message");
+          // TODO optional
+      },
+    );
+    
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+        key : _scaffoldKey,
         appBar: AppBar(
           title : Text("BIET JHANSI"),
           backgroundColor : Color.fromRGBO(2, 52, 130, 1),
@@ -82,6 +153,9 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+ 
+
 }
 
 class RenderTiles extends StatefulWidget {
@@ -104,4 +178,7 @@ class _RenderTilesState extends State<RenderTiles> {
       children: tileitems.map((tileitem) => Tiles(tileitem: tileitem)).toList(),
     );
   }
+  
 }
+
+
