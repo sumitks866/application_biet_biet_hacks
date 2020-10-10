@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1050323168225",
+    "firebase_url": "https://application-biet.firebaseio.com",
+    "project_id": "application-biet",
+    "storage_bucket": "application-biet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050323168225:android:07d2cd9dae0663a96240a0",
+        "android_client_info": {
+          "package_name": "com.timus.application_biet_biet_hacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050323168225-8ss6hm9n0lnv1rbgrosg69jpj1h9mrsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0bNLSZjCYQV2EJwLyRDurpEDdRg2EFT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050323168225-8ss6hm9n0lnv1rbgrosg69jpj1h9mrsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
