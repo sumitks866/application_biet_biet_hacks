@@ -9,11 +9,11 @@ class Notice extends StatelessWidget {
         leading: IconButton(
           icon : Icon(Icons.arrow_back),
           onPressed: (){
-            Navigator.pop(context) ; 
+            Navigator.pop(context) ;
           },
         ),
       ),
-      
+
     );
   }
 }

@@ -1,9 +1,11 @@
+
 import 'dart:async';
 import 'dart:io';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:application_biet_biet_hacks/shared/ProfilePic.dart';
 import 'package:flutter/material.dart';
-
+import 'package:application_biet_biet_hacks/shared/global.dart';
 import 'package:application_biet_biet_hacks/models/draweritem_def.dart';
 import 'package:application_biet_biet_hacks/screens/renderDrawer.dart';
 import 'package:application_biet_biet_hacks/models/tiles_def.dart';
@@ -15,8 +17,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-    
-  
 
   List<DrawerItem> draweritems = [
     DrawerItem(text: "You",icon: Icon(Icons.person),screenName: '/you'),
@@ -111,14 +111,9 @@ class _HomeState extends State<Home> {
                   child:  Column(
                     children: <Widget>[
                       SizedBox(height: 10.0),
-                      Center(
-                        child: CircleAvatar(
-                          backgroundImage: AssetImage('assets/person.png'),
-                          radius: 65,
-                        ),
-                      ),
+                      ProfilePic(),
                       Text(
-                        'your name \nCurrent Session',
+                        '${currActiveStudent.name}\nCurrent Session',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,

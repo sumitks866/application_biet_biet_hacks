@@ -1,3 +1,5 @@
+import 'package:application_biet_biet_hacks/shared/global.dart';
+import 'package:application_biet_biet_hacks/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 import 'package:application_biet_biet_hacks/serivce/authentication.dart';
@@ -12,11 +14,12 @@ class _LoginState extends State<Login> {
   String email = '';
   String password = '';
   String error = '';
+  bool isLoading = false;
   AuthenticationService _auth = AuthenticationService();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return isLoading?Loading():Scaffold(
       body: Container(
         width: double.infinity,
         color: Colors.blue[900],
@@ -122,6 +125,9 @@ class _LoginState extends State<Login> {
                         SizedBox(height: 40,),
                         GestureDetector(
                           onTap: () async{
+                            setState(() {
+                              isLoading = true;
+                            });
                             FocusScope.of(context).unfocus();
                             dynamic loginResult = await _auth.login(email, password);
                             if(loginResult==null){
@@ -130,8 +136,12 @@ class _LoginState extends State<Login> {
                                 error = 'Failed to Login!';
                               });
                             }else{
+                              await initData();
                               print("successfully logged in "+loginResult.uid);
                             }
+                            setState(() {
+                              isLoading = false;
+                            });
                           },
                           child: Container(
                             height: 50,
