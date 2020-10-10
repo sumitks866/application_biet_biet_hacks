@@ -38,8 +38,8 @@ class _TilesState extends State<Tiles> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
           boxShadow: [BoxShadow(
-            color: Colors.black,
-            blurRadius: 2.0,
+            color: isActive?Colors.blue[800]:Colors.black,
+            blurRadius: 3.0,
 
             offset: Offset(5.0,5.0)
             ),

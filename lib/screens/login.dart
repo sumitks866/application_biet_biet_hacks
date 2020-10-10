@@ -136,7 +136,7 @@ class _LoginState extends State<Login> {
                                 error = 'Failed to Login!';
                               });
                             }else{
-                              await initData();
+                              initData();
                               print("successfully logged in "+loginResult.uid);
                             }
                             setState(() {
