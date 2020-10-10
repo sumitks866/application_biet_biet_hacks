@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:application_biet_biet_hacks/screens/tiles_def.dart';
+import 'package:application_biet_biet_hacks/models/tiles_def.dart';
 
 class Tiles extends StatefulWidget {
   final TileItem tileitem;
