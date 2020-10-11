@@ -1,6 +1,7 @@
 import 'package:application_biet_biet_hacks/models/user.dart';
 import 'package:application_biet_biet_hacks/screens/academics.dart';
 import 'package:application_biet_biet_hacks/screens/alumni.dart';
+import 'package:application_biet_biet_hacks/screens/attendance.dart';
 import 'package:application_biet_biet_hacks/screens/contact.dart';
 import 'package:application_biet_biet_hacks/screens/department.dart';
 import 'package:application_biet_biet_hacks/screens/gallery.dart';
@@ -49,6 +50,7 @@ class _MyAppState extends State<MyApp> {
             '/tandp':(context)=>TandP(),
             '/alumni':(context)=>Alumni(),
             '/contact':(context)=>Contact(),
+            '/attendance':(context)=>Attendance(),
           },
       ),
     );

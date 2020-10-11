@@ -11,7 +11,7 @@ class Ims extends StatelessWidget {
             Navigator.pop(context) ;
           },
         ),
-        backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+        backgroundColor: Colors.blue[700],
         title: Text("IMS", style: TextStyle(color : Colors.white),),
       ),
       body: Padding(
