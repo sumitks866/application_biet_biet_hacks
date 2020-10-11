@@ -8,6 +8,7 @@ import 'package:application_biet_biet_hacks/screens/grievance_form.dart';
 import 'package:application_biet_biet_hacks/screens/ims.dart';
 import 'package:application_biet_biet_hacks/screens/notice.dart';
 import 'package:application_biet_biet_hacks/screens/result.dart';
+import 'package:application_biet_biet_hacks/screens/show_girevances.dart';
 import 'package:application_biet_biet_hacks/screens/tandp.dart';
 import 'package:application_biet_biet_hacks/screens/you.dart';
 import 'package:application_biet_biet_hacks/serivce/authentication.dart';
@@ -42,7 +43,8 @@ class _MyAppState extends State<MyApp> {
             '/ims': (context)=>Ims(),
             '/gallery': (context)=>Gallery(),
             '/notices':(context)=>Notice(),
-            '/grievances':(context)=>Grievances(),
+            '/grievancesform':(context)=>GrievancesForm(),
+            '/showgrievances':(context)=>ShowGrievances(),
             '/academics': (context)=>Academics(), 
             '/tandp':(context)=>TandP(),
             '/alumni':(context)=>Alumni(),
