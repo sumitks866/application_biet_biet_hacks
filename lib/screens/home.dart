@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:application_biet_biet_hacks/serivce/upload_notification.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:application_biet_biet_hacks/shared/ProfilePic.dart';
 import 'package:flutter/material.dart';
@@ -47,29 +48,32 @@ class _HomeState extends State<Home> {
       _fcm.configure(
         onMessage: (Map<String, dynamic> message) async {
           print("onMessage: $message");
-          final snackBar = SnackBar(
-            content: Text('A new Notice arrived!'), 
-            action: SnackBarAction(
-              label: "Go to Notices",
-              onPressed: () {
-                Navigator.pushNamed(context,'/notices') ;
-              },
-              ),
-          );
-          _scaffoldKey.currentState.showSnackBar(snackBar);
+          // final snackBar = SnackBar(
+          //   content: Text('A new Notice arrived!'), 
+          //   action: SnackBarAction(
+          //     label: "Go to Notices",
+          //     onPressed: () {
+          //       Navigator.pushNamed(context,'/notices') ;
+          //     },
+          //     ),
+          // );
+          // _scaffoldKey.currentState.showSnackBar(snackBar);
 
           showDialog(
             context: context,
             builder: (context) => AlertDialog(
-              backgroundColor: Colors.red[700],
+              backgroundColor: Colors.blue[700],
                     content: ListTile(
-                    title: Text(message['notification']['title']),
-                    subtitle: Text(message['notification']['body']),
+                    title: Text(message['notification']['title'], style: TextStyle(color: Colors.white),),
+                    subtitle: Text(message['notification']['body'], style: TextStyle(color: Colors.white),),
                     ),
                     actions: <Widget>[
                     FlatButton(
-                        child: Text('Ok'),
-                        onPressed: () => Navigator.of(context).pop(),
+                      child: Text('OK',style: TextStyle(color: Colors.white)),
+                        onPressed: () {
+                           dynamic upload = UploadNotice().upload(message['notification']['title'], message['notification']['body']) ; 
+                          Navigator.pushNamed(context,'/shownotices' ) ;
+                        }
                     ),
                 ],
             ),
