@@ -143,9 +143,6 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
- 
-
 }
 
 class RenderTiles extends StatefulWidget {
@@ -155,7 +152,8 @@ class RenderTiles extends StatefulWidget {
 
 class _RenderTilesState extends State<RenderTiles> {
   List<TileItem> tileitems = [
-    TileItem(tileName: "NOTICES" , imageName: "assets/icon_notice.png" ,screenName: '/notices'),
+    TileItem(tileName: "ATTENDANCE" , imageName: "assets/icon_attendance.png" ,screenName: '/attendance'),
+    TileItem(tileName: "NOTICES" , imageName: "assets/icon_notes.png" ,screenName: '/notices'),
     TileItem(tileName: "IMS" , imageName: "assets/icon_ims.png",screenName: '/ims' ),
     TileItem(tileName: "EXAMINATION RESULTS" , imageName: "assets/icon_exam.png" ,screenName:'/result' ),
     TileItem(tileName: "DEPARTMENTS" , imageName: "assets/icon_department.png" ,screenName: '/departments'),

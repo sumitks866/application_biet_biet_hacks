@@ -36,7 +36,7 @@ class _YouState extends State<You> {
             Navigator.pop(context) ;
           },
         ),
-        backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+        backgroundColor: Colors.blue[700],
         title: Text("You", style: TextStyle(color : Colors.white),),
       ),
       body: ListView(
