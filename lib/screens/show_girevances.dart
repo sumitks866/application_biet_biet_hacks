@@ -17,7 +17,7 @@ class _ShowGrievancesState extends State<ShowGrievances> {
       child: Container(
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+            backgroundColor: Colors.blue[700],
             title:  Text("Grievances Redressal", style: TextStyle(color : Colors.white),),
           ),
           floatingActionButton: FloatingActionButton(
