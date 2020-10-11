@@ -1,12 +1,12 @@
 import 'package:application_biet_biet_hacks/serivce/upload_grievances.dart';
 import 'package:flutter/material.dart';
 
-class Grievances extends StatefulWidget {
+class GrievancesForm extends StatefulWidget {
   @override
   _GrievancesState createState() => _GrievancesState();
 }
 
-class _GrievancesState extends State<Grievances> {
+class _GrievancesState extends State<GrievancesForm> {
 
   var _controller1 = TextEditingController();
   var _controller2 = TextEditingController();
@@ -135,6 +135,7 @@ class _GrievancesState extends State<Grievances> {
                           _controller1.clear();
                           _controller2.clear();
                           FocusScope.of(context).unfocus();
+                          Navigator.pop(context);
                         }else {
                           error = 'An error occured please try again';
                         }
