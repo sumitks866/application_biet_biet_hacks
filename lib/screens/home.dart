@@ -9,6 +9,7 @@ import 'package:application_biet_biet_hacks/models/draweritem_def.dart';
 import 'package:application_biet_biet_hacks/screens/renderDrawer.dart';
 import 'package:application_biet_biet_hacks/models/tiles_def.dart';
 import 'package:application_biet_biet_hacks/screens/renderTiles.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -51,9 +52,7 @@ class _HomeState extends State<Home> {
             action: SnackBarAction(
               label: "Go to Notices",
               onPressed: () {
-                Navigator.pushNamed(context,'/notices') ; 
-                // TO - DO
-                // Routing to Notices Screen 
+                Navigator.pushNamed(context,'/notices') ;
               },
               ),
           );
@@ -96,8 +95,8 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         key : _scaffoldKey,
         appBar: AppBar(
-          title : Text("BIET JHANSI"),
-          backgroundColor : Color.fromRGBO(2, 52, 130, 1),
+          title : Text("BIET JHANSI", style: GoogleFonts.montserrat(),),
+          backgroundColor : Colors.blue[700],
         ),
         drawer: Drawer(
           child: ListView(
@@ -124,7 +123,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   decoration : BoxDecoration(
-                    color : Color.fromRGBO(2, 52, 130, 1),
+                    color : Colors.blue[700],
                   ),
                 ),
               ),
@@ -135,14 +134,11 @@ class _HomeState extends State<Home> {
           ),
         ),
         body: Container(
+          margin: EdgeInsets.fromLTRB(0, 20, 0,0),
           decoration: BoxDecoration(
-            color : Colors.blue[800],
+            color : Colors.white,
           ),
-          child: Padding(
-            padding: EdgeInsets.all(20.0),
-            
-            child : RenderTiles(),
-          ),
+          child: RenderTiles(),
         ) ,
       ),
     );

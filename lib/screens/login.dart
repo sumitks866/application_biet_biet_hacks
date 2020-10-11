@@ -3,6 +3,7 @@ import 'package:application_biet_biet_hacks/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 import 'package:application_biet_biet_hacks/serivce/authentication.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -34,25 +35,34 @@ class _LoginState extends State<Login> {
               child: Column(
                 crossAxisAlignment : CrossAxisAlignment.start,
                 children : <Widget>[
-                  Text("LOGIN",
-                    style: TextStyle(
+                  SizedBox(height : 20),
+                  Align(
+                    alignment : Alignment.center,
+                      child: Text("Welcome to BIET , Jhansi",
+                      style: GoogleFonts.montserrat( textStyle :TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        
+                        ),
+                    ),),
+                  ),
+                 
+                  SizedBox(height : 100) ,
+                  Center(
+                    child: Text("LOGIN",
+                    style: GoogleFonts.montserrat(textStyle : TextStyle(
                       color: Colors.white,
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      ),
+                      ),),
+                ),
                   ),
-                  SizedBox(height : 10) ,
-                  Text("Welcome to BIET Jhansi",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      ),
-                  ),
+                  
                 ],
               ),
             ),
 
-            SizedBox(height : 120),
+            SizedBox(height : 10),
             Expanded(
               child : Container(
 
