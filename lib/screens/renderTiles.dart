@@ -30,43 +30,50 @@ class _TilesState extends State<Tiles> {
           elevation = 5;
         });
       },
-      child: Container(
-        margin: EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 15.0),
-        width: double.maxFinite,
-        
-        height: 200,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
-          boxShadow: [BoxShadow(
-            color: isActive?Colors.blue[800]:Colors.black,
-            blurRadius: 3.0,
-
-            offset: Offset(5.0,5.0)
-            ),
-          ],
-         // border: Border.all(color: isActive?Colors.grey[700]:Color.fromRGBO(2, 52, 130, 1),width: 6),
-          image: DecorationImage(
-            image: AssetImage('${widget.tileitem.imageName}'),
-            fit : BoxFit.fill,
+      child: Column(
+        children: [
+          SizedBox(height: 20,),
+          Container(
+            margin: EdgeInsets.fromLTRB(40.0, 5.0, 40.0, 15.0),
+            width: double.maxFinite,
             
+            height: 100,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              //borderRadius: BorderRadius.circular(100),
+              // boxShadow: [BoxShadow(
+              //   color: isActive?Colors.blue[800]:Colors.black,
+              //   blurRadius: 3.0,
+
+              //   offset: Offset(5.0,5.0)
+              //   ),
+              // ],
+              border: Border.all(color: Colors.blue[700],width: 4),
+              image: DecorationImage(
+                image: AssetImage('${widget.tileitem.imageName}'),
+                fit : BoxFit.contain,
+                
+              ),
+            ),
           ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(15,20,0,10),
-          child: Align(
+          
+          Align(
             alignment : Alignment.bottomCenter ,
             child : RichText(
               text : TextSpan(
                 text: '${widget.tileitem.tileName}',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color:isActive?Colors.grey[700]:Color.fromRGBO(2, 52, 130, 1),
+                  color:Colors.black,
                   fontSize: 20,
                 ),
               ),
             ),
           ),
-        ),
+          SizedBox(height : 20),
+          Divider(thickness : 2, height : 20,color : Colors.blue[700], indent: 60,endIndent: 60,),
+          
+        ],
       ),
     );
   }
