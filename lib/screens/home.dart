@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:io';
 
@@ -28,7 +27,6 @@ class _HomeState extends State<Home> {
     DrawerItem(text: "Sign Out",icon: Icon(Icons.exit_to_app))
   ];
 
-  
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final FirebaseMessaging _fcm = FirebaseMessaging() ; 
   StreamSubscription iosSubscription;
@@ -112,8 +110,9 @@ class _HomeState extends State<Home> {
                     children: <Widget>[
                       SizedBox(height: 10.0),
                       ProfilePic(),
+                      SizedBox(height: 12,),
                       Text(
-                        '${currActiveStudent.name}\nCurrent Session',
+                        '${currActiveStudent.name}\n${currActiveStudent.rollNumber}',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,

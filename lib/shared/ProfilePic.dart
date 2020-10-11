@@ -1,3 +1,4 @@
+import 'package:application_biet_biet_hacks/shared/global.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePic extends StatelessWidget {
@@ -5,7 +6,7 @@ class ProfilePic extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: CircleAvatar(
-        backgroundImage: AssetImage('assets/person.png'),
+        backgroundImage: ProfilePicUrl==null?AssetImage('assets/person.png'):NetworkImage(ProfilePicUrl),
         radius: 65,
       ),
     );
