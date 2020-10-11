@@ -29,7 +29,7 @@ class _ContactState extends State<Contact> {
             Navigator.pop(context) ;
           },
         ),
-        backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+        backgroundColor: Colors.blue[700],
         title: Text("Contacts", style: TextStyle(color : Colors.white),),
       ),
        body: ListView(

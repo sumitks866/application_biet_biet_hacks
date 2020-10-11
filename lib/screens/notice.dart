@@ -17,7 +17,7 @@ class _NoticeState extends State<Notice> {
             Navigator.pop(context) ;
           },
         ),
-        backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+        backgroundColor: Colors.blue[700],
         title: Text("Notice", style: TextStyle(color : Colors.white),),
       ),
       body: SafeArea(

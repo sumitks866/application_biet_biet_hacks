@@ -11,7 +11,7 @@ class Academics extends StatelessWidget {
             Navigator.pop(context) ;
           },
         ),
-        backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+        backgroundColor: Colors.blue[700],
         title: Text("Academics", style: TextStyle(color : Colors.white),),
       ),
       body: SafeArea(

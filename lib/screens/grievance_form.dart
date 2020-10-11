@@ -21,7 +21,7 @@ class _GrievancesState extends State<GrievancesForm> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Post Grievance Redressal'),
-        backgroundColor: Color.fromRGBO(2, 52, 130, 1),
+        backgroundColor: Colors.blue[700],
       ),
       body: Container(
 

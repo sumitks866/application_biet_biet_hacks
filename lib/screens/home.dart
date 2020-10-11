@@ -20,9 +20,9 @@ class _HomeState extends State<Home> {
 
   List<DrawerItem> draweritems = [
     DrawerItem(text: "You",icon: Icon(Icons.person),screenName: '/you'),
-    DrawerItem(text: "Academics",icon: Icon(Icons.book),screenName: '/academics'),
+  //  DrawerItem(text: "Academics",icon: Icon(Icons.book),screenName: '/academics'),
     DrawerItem(text: "Training & Placement",icon: Icon(Icons.dashboard),screenName: '/tandp'),
-    DrawerItem(text: "Alumni",icon: Icon(Icons.account_balance),screenName: '/alumni'),
+  //  DrawerItem(text: "Alumni",icon: Icon(Icons.account_balance),screenName: '/alumni'),
     DrawerItem(text: "Grievance Redressal",icon: Icon(Icons.inbox),screenName: '/showgrievances'),
     DrawerItem(text: "Contact Us",icon: Icon(Icons.mail), screenName: '/contact'),
     DrawerItem(text: "Sign Out",icon: Icon(Icons.exit_to_app))
@@ -58,22 +58,22 @@ class _HomeState extends State<Home> {
           );
           _scaffoldKey.currentState.showSnackBar(snackBar);
 
-          // showDialog(
-          //   context: context,
-          //   builder: (context) => AlertDialog(
-          //     backgroundColor: Colors.red[700],
-          //           content: ListTile(
-          //           title: Text(message['notification']['title']),
-          //           subtitle: Text(message['notification']['body']),
-          //           ),
-          //           actions: <Widget>[
-          //           FlatButton(
-          //               child: Text('Ok'),
-          //               onPressed: () => Navigator.of(context).pop(),
-          //           ),
-          //       ],
-          //   ),
-          // );
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              backgroundColor: Colors.red[700],
+                    content: ListTile(
+                    title: Text(message['notification']['title']),
+                    subtitle: Text(message['notification']['body']),
+                    ),
+                    actions: <Widget>[
+                    FlatButton(
+                        child: Text('Ok'),
+                        onPressed: () => Navigator.of(context).pop(),
+                    ),
+                ],
+            ),
+          );
               
           
         },
@@ -156,7 +156,7 @@ class _RenderTilesState extends State<RenderTiles> {
     TileItem(tileName: "NOTICES" , imageName: "assets/icon_notes.png" ,screenName: '/notices'),
     TileItem(tileName: "IMS" , imageName: "assets/icon_ims.png",screenName: '/ims' ),
     TileItem(tileName: "EXAMINATION RESULTS" , imageName: "assets/icon_exam.png" ,screenName:'/result' ),
-    TileItem(tileName: "DEPARTMENTS" , imageName: "assets/icon_department.png" ,screenName: '/departments'),
+    //TileItem(tileName: "DEPARTMENTS" , imageName: "assets/icon_department.png" ,screenName: '/departments'),
     TileItem(tileName: "PHOTO GALLERY" , imageName: "assets/icon_gallery.png",screenName:'/gallery' ),
   ] ;
 
